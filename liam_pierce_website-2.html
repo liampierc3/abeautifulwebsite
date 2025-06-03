@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liam Pierce</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            background: #ffffff;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 30px;
+        }
+
+        header {
+            border-bottom: 2px solid #222;
+            margin-bottom: 40px;
+            padding-bottom: 25px;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: normal;
+            margin-bottom: 8px;
+        }
+
+        .tagline {
+            font-size: 16px;
+            color: #555;
+        }
+
+        nav {
+            margin: 25px 0;
+        }
+
+        nav a {
+            color: #0066cc;
+            text-decoration: underline;
+            margin-right: 25px;
+            font-size: 15px;
+        }
+
+        nav a:hover {
+            background: #0066cc;
+            color: white;
+            text-decoration: none;
+            padding: 3px 5px;
+        }
+
+        .current-page {
+            background: #222;
+            color: white;
+            padding: 3px 5px;
+            text-decoration: none;
+        }
+
+        .section {
+            margin-bottom: 50px;
+            padding: 25px;
+            background: #fafafa;
+            border: 1px solid #ddd;
+        }
+
+        .section h2 {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .work-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 25px;
+        }
+
+        .work-item {
+            border: 1px solid #ccc;
+            padding: 20px;
+            background: white;
+        }
+
+        .work-item h3 {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .work-item p {
+            font-size: 14px;
+            margin-bottom: 15px;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .work-item a {
+            color: #0066cc;
+            font-size: 14px;
+            text-decoration: underline;
+        }
+
+        .bio-text {
+            font-size: 16px;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .contact-info {
+            font-size: 16px;
+            margin-top: 25px;
+            line-height: 1.8;
+        }
+
+        .contact-info a {
+            color: #0066cc;
+            text-decoration: underline;
+        }
+
+        .footer {
+            border-top: 1px solid #ddd;
+            margin-top: 50px;
+            padding-top: 25px;
+            font-size: 13px;
+            color: #666;
+            text-align: center;
+        }
+
+        .update-log {
+            font-size: 12px;
+            color: #888;
+            margin-top: 12px;
+        }
+
+        .simple-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .simple-table td {
+            padding: 12px;
+            border-bottom: 1px solid #eee;
+            font-size: 14px;
+            vertical-align: top;
+            line-height: 1.5;
+        }
+
+        .simple-table td:first-child {
+            font-weight: bold;
+            width: 110px;
+        }
+
+        .simple-table a {
+            color: #0066cc;
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            
+            nav a {
+                display: block;
+                margin-bottom: 5px;
+            }
+            
+            .work-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Liam Pierce</h1>
+            <div class="tagline">I make videos</div>
+            
+            <nav>
+                <a href="#" class="current-page">home</a>
+                <a href="#work">work</a>
+                <a href="#archive">archive</a>
+                <a href="#contact">contact</a>
+            </nav>
+        </header>
+
+        <div class="section" id="work">
+            <h2>Work</h2>
+            
+            <div class="bio-text" style="margin-bottom: 20px;">
+                <strong><a href="#" style="color: #0066cc; text-decoration: underline;">→ My reel</a></strong>
+            </div>
+            
+            <div class="work-grid">
+                <div class="work-item">
+                    <h3>Documentary: [Title TBD]</h3>
+                    <p>Year-long project following [subject]. Raw, honest look at [theme]. Currently in post-production.</p>
+                    <a href="#">View Trailer →</a>
+                </div>
+                
+                <div class="work-item">
+                    <h3>YouTube Channel</h3>
+                    <p>Public journal. Thoughts on creativity, business, life. No schedule, just when something needs saying.</p>
+                    <a href="#">Watch Latest →</a>
+                </div>
+                
+                <div class="work-item">
+                    <h3>Client Projects</h3>
+                    <p>Strategic narrative development for companies that care about their story. Recent work: [Brand], [Brand], [Brand].</p>
+                    <a href="#">Case Studies →</a>
+                </div>
+                
+                <div class="work-item">
+                    <h3>Mountain Bike Films</h3>
+                    <p>Where it all started. Traveled, filmed, got good at it. Archive of work from 2015-2023.</p>
+                    <a href="#">Archive →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="archive">
+            <h2>Archive</h2>
+            
+            <div class="bio-text" style="margin-bottom: 20px;">
+                Ideas that won't leave me alone.
+            </div>
+            
+            <table class="simple-table">
+                <tr>
+                    <td>Jun 2025</td>
+                    <td><a href="#">On creative blocks and other myths</a></td>
+                </tr>
+                <tr>
+                    <td>May 2025</td>
+                    <td><a href="#">Why I went all-in on Bitcoin at 24</a></td>
+                </tr>
+                <tr>
+                    <td>Apr 2025</td>
+                    <td><a href="#">The death of video content (and what comes next)</a></td>
+                </tr>
+                <tr>
+                    <td>Mar 2025</td>
+                    <td><a href="#">Breaking out of the freelance box</a></td>
+                </tr>
+                <tr>
+                    <td>Feb 2025</td>
+                    <td><a href="#">Health forced my creative reset</a></td>
+                </tr>
+            </table>
+            
+            <div style="margin-top: 15px; font-size: 12px;">
+                <a href="#archive">→ Archive (2023-2025)</a>
+            </div>
+        </div>
+
+        <div class="section" id="contact">
+            <h2>Contact</h2>
+            
+            <div class="contact-info">
+                <strong>Email:</strong> <a href="mailto:liam@liampierce.com">liam@liampierce.com</a><br>
+                <strong>Based:</strong> San Diego
+            </div>
+        </div>
+
+        <div class="footer">
+            <div>© 2025 Liam Pierce. Built with HTML and stubbornness.</div>
+            <div class="update-log">
+                Last updated: June 2025 | Site loads in 0.2 seconds because I'm not trying to impress you with animations
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Minimal JavaScript for page navigation simulation
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('nav a');
+            const sections = document.querySelectorAll('.section');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    if (this.getAttribute('href').startsWith('#')) {
+                        e.preventDefault();
+                        
+                        // Update active nav state
+                        navLinks.forEach(l => l.classList.remove('current-page'));
+                        this.classList.add('current-page');
+                        
+                        // Smooth scroll to section
+                        const targetId = this.getAttribute('href').substring(1);
+                        const targetSection = targetId ? document.getElementById(targetId) : document.body;
+                        
+                        if (targetSection) {
+                            targetSection.scrollIntoView({ behavior: 'smooth' });
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
