@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etc - Liam Pierce</title>
+    <link rel="stylesheet" href="css/styles.css?v=139">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url('images/space.jpg') repeat;
+            background-color: #000;
+            min-height: 6000px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        .collage {
+            padding-top: 50px;
+            position: relative;
+            max-width: 1800px;
+            margin: 0 auto;
+        }
+
+        .collage img {
+            position: absolute;
+            border-radius: 4px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+
+        /* Only add transitions after page load to prevent load animations */
+        body:not(.loading) .collage img {
+            transition: transform 0.3s ease;
+        }
+
+        .collage img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+            z-index: 100;
+        }
+
+        /* Mobile styles - Carmack's aggressive mobile rewrite */
+        @media screen and (max-width: 768px) {
+            .collage {
+                padding: 15px;
+                max-width: 100%;
+                width: 100vw;
+            }
+
+            /* Completely override all positioning for mobile - force everything into viewport */
+            .collage img {
+                position: relative !important;
+                transform: none !important;
+                left: auto !important;
+                right: auto !important;
+                top: auto !important;
+                width: 80% !important;
+                max-width: 300px !important;
+                margin: 20px auto !important;
+                display: block !important;
+                transform-origin: center !important;
+            }
+
+            /* Special positioning for key images */
+            #et-cetera {
+                width: 90% !important;
+                max-width: 350px !important;
+                margin: 30px auto !important;
+            }
+
+            body {
+                min-height: auto !important;
+                overflow-x: hidden;
+            }
+
+            .collage {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                min-height: auto;
+            }
+        }
+
+        /* Tablet styles */
+        @media screen and (min-width: 769px) and (max-width: 1024px) {
+            .collage {
+                padding: 30px;
+                max-width: 95%;
+            }
+
+            .collage img {
+                transform: scale(0.8);
+            }
+
+            body {
+                min-height: 4500px;
+            }
+        }
+
+        /* Priority images (visible on load) */
+        #et-cetera {
+            width: 500px;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 70px;
+        }
+
+        #dl {
+            width: 400px;
+            left: 100px;
+            top: 300px;
+        }
+
+        #everythingdcomputer {
+            width: 350px;
+            right: 300px;
+            top: 400px;
+            z-index: 2;
+        }
+
+        #rr {
+            width: 400px;
+            right: 50px;
+            top: 300px;
+            z-index: 1;
+        }
+
+        #dd {
+            width: 450px;
+            left: 35%;
+            top: 600px;
+        }
+
+        #fox {
+            width: 300px;
+            left: 50px;
+            top: 850px;
+        }
+
+        #ethereal {
+            width: 250px;
+            left: 400px;
+            top: 900px;
+        }
+
+        #sapiensslander {
+            width: 480px;
+            right: 150px;
+            top: 800px;
+        }
+
+        /* Adding new images */
+        #dscf6615 {
+            width: 400px;
+            left: 150px;
+            top: 1150px;
+        }
+
+        #tumblr {
+            width: 350px;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 4200px;
+        }
+
+        #img-0519 {
+            width: 400px;
+            right: 150px;
+            top: 2800px;
+        }
+
+        #screenshot-2025-04 {
+            width: 450px;
+            left: 100px;
+            top: 3500px;
+        }
+
+        /* Row 1 */
+        #eye {
+            width: 150px;
+            right: 200px;
+            top: 850px;
+        }
+
+        /* Row 2 */
+        #think {
+            width: 200px;
+            left: 200px;
+            top: 1250px;
+        }
+
+        #coffee {
+            width: 400px;
+            right: 300px;
+            top: 1200px;
+        }
+
+        #glitch-space {
+            width: 300px;
+            left: 650px;
+            top: 1300px;
+        }
+
+        /* Row 3 */
+        #ai {
+            width: 350px;
+            left: 150px;
+            top: 1600px;
+        }
+
+        #julia-animation {
+            width: 300px;
+            left: 550px;
+            top: 1750px;
+        }
+
+        /* Row 4 */
+        #intuition {
+            width: 250px;
+            left: 100px;
+            top: 2000px;
+        }
+
+        #signal {
+            width: 400px;
+            right: 150px;
+            top: 2050px;
+        }
+
+        #screenshot-1 {
+            width: 450px;
+            left: 450px;
+            top: 2150px;
+        }
+
+        /* Row 5 */
+        #idaho {
+            width: 300px;
+            left: 200px;
+            top: 2400px;
+        }
+
+        #shoot {
+            width: 350px;
+            right: 200px;
+            top: 2450px;
+        }
+
+        #unknown-6 {
+            width: 250px;
+            left: 150px;
+            top: 2800px;
+        }
+
+        #unknown-5 {
+            width: 200px;
+            left: 500px;
+            top: 2850px;
+        }
+
+        #unknown-3 {
+            width: 300px;
+            right: 150px;
+            top: 2900px;
+        }
+
+        /* Row 7 */
+        #unknown-2 {
+            width: 350px;
+            left: 100px;
+            top: 3200px;
+        }
+
+        #img-8321 {
+            width: 400px;
+            right: 200px;
+            top: 3250px;
+        }
+
+        #nyt-animation {
+            width: 300px;
+            left: 550px;
+            top: 3300px;
+        }
+
+        /* Row 8 */
+        #img-9556 {
+            width: 300px;
+            left: 200px;
+            top: 3600px;
+        }
+
+        #img-0355 {
+            width: 350px;
+            right: 250px;
+            top: 3650px;
+        }
+
+        /* Row 9 */
+        #img-0339 {
+            width: 400px;
+            left: 150px;
+            top: 4000px;
+        }
+
+        #img-2018 {
+            width: 300px;
+            right: 200px;
+            top: 4050px;
+        }
+
+        /* Row 10 */
+        #img-4326 {
+            width: 250px;
+            left: 300px;
+            top: 4400px;
+        }
+
+        #img-7063 {
+            width: 350px;
+            right: 300px;
+            top: 4450px;
+        }
+
+        /* Row 11 */
+        #img-7289 {
+            width: 400px;
+            left: 200px;
+            top: 4800px;
+        }
+
+        #connecting-dots {
+            width: 300px;
+            right: 200px;
+            top: 4850px;
+        }
+
+        /* Row 12 */
+        #resistance {
+            width: 900px;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 1500px;
+        }
+
+        #screenshot-2025 {
+            width: 450px;
+            right: 100px;
+            top: 2200px;
+        }
+
+        /* New images from June 2025 */
+        #video-timeline {
+            width: 600px;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 5500px;
+        }
+
+        #highlighted-text {
+            width: 400px;
+            left: 200px;
+            top: 5800px;
+        }
+
+        #teachers-computers {
+            width: 350px;
+            right: 200px;
+            top: 5800px;
+        }
+
+        /* GIF positions */
+        #unknown-gif {
+            width: 300px;
+            right: 250px;
+            top: 5100px;
+        }
+
+        #unknown-gif-2 {
+            width: 300px;
+            left: 200px;
+            top: 5400px;
+        }
+
+        #screenshot-2025-01 {
+            width: 400px;
+            right: 150px;
+            top: 3900px;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital@0;1&display=swap" rel="stylesheet">
+</head>
+<body class="loading">
+    <!-- Quirky arrow back to main page -->
+    <a href="./index.html" style="position: fixed; top: 30px; left: 30px; z-index: 1000; font-size: 48px; text-decoration: none; color: #fff; text-shadow: 2px 2px 4px rgba(0,0,0,0.8); transform: rotate(-15deg); transition: transform 0.3s ease;" onmouseover="this.style.transform='rotate(-15deg) scale(1.2)'" onmouseout="this.style.transform='rotate(-15deg) scale(1)'">↖</a>
+    <div class="collage">
+        <!-- Priority images (visible on load) -->
+        <img src="images/et cetera.jpg" id="et-cetera" alt="">
+        <img src="images/dl.jpg" id="dl" alt="">
+        <img src="images/rr.jpg" id="rr" alt="">
+        <img src="images/everythingdcomputer.jpg" id="everythingdcomputer" alt="">
+        <img src="images/dd.jpg" id="dd" alt="">
+        
+        <!-- Additional images -->
+        <img src="images/fox.jpg" id="fox" alt="">
+        <img src="images/ethereal.jpg" id="ethereal" alt="">
+        <img src="images/sapiensslander.jpg" id="sapiensslander" alt="">
+        <img src="images/think.jpg" id="think" alt="">
+        <img src="images/DSCF6615.JPEG" id="dscf6615" alt="">
+        <img src="images/tumblr_p2mtjfK3Mj1tn7avwo1_640 copy.jpg" id="tumblr" alt="">
+        <img src="images/coffee.jpg" id="coffee" alt="">
+        <img src="images/ai.jpg" id="ai" alt="">
+        <img src="images/intuition.jpg" id="intuition" alt="">
+        <img src="images/signal.JPEG" id="signal" alt="">
+        <img src="images/Screenshot 2025-04-17 at 10.28.02 AM.jpg" id="screenshot-1" alt="">
+        <img src="images/idaho.jpg" id="idaho" alt="">
+        <img src="images/shoot.jpg" id="shoot" alt="">
+        <img src="images/Unknown-6.jpg" id="unknown-6" alt="">
+        <img src="images/Unknown-5.jpg" id="unknown-5" alt="">
+        <img src="images/Unknown-3.jpg" id="unknown-3" alt="">
+        <img src="images/Unknown-2.jpg" id="unknown-2" alt="">
+        <img src="images/IMG_8321 2.jpeg" id="img-8321" alt="">
+        <img src="images/IMG_9556.jpg" id="img-9556" alt="">
+        <img src="images/IMG_0355.jpg" id="img-0355" alt="">
+        <img src="images/IMG_0339.jpg" id="img-0339" alt="">
+        <img src="images/2018-01-26 15:30:28.074.jpeg" id="img-2018" alt="">
+        <img src="images/IMG_4326.jpeg" id="img-4326" alt="">
+        <img src="images/IMG_7063.jpeg" id="img-7063" alt="">
+        <img src="images/IMG_7289.jpg" id="img-7289" alt="">
+        <img src="images/connecting the dots.png" id="connecting-dots" alt="">
+        <img src="images/3 stages of resistance.jpg" id="resistance" alt="">
+        <img src="images/Screenshot 2025-01-02 at 4.45.29 PM.JPEG" id="screenshot-2025-01" alt="">
+
+        <!-- GIFs -->
+        <img src="images/Animation — Julia Schimautz.gif" id="julia-animation" alt="">
+        <img src="images/The New York Times — Julia Schimautz.gif" id="nyt-animation" alt="">
+        <img src="images/Unknown.gif" id="unknown-gif" alt="">
+        <img src="images/Unknown-2.gif" id="unknown-gif-2" alt="">
+        <img src="images/IMG_0519.jpg" id="img-0519" alt="">
+        <img src="images/Screenshot 2025-04-17 at 10.28.02 AM.jpg" id="screenshot-2025-04" alt="">
+        
+        <!-- New images from June 2025 -->
+        <img src="images/video-timeline.jpg" id="video-timeline" alt="Video editing timeline">
+        <img src="images/highlighted-text.jpg" id="highlighted-text" alt="Highlighted text about understanding">
+        <img src="images/teachers-computers.jpg" id="teachers-computers" alt="Newspaper clipping about teachers and computers">
+
+        <!-- Adding new images */
+        <img src="images/IMG_8619.jpg" id="img-8619" alt="">
+    </div>
+
+    <script>
+        // Remove loading class after page loads to enable transitions
+        window.addEventListener('load', function() {
+            document.body.classList.remove('loading');
+        });
+    </script>
+
+</body>
+</html>
